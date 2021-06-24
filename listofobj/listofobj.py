@@ -70,11 +70,12 @@ class ListOfObj(UserList):
 
     def __getattribute__(self, attr):
         if attr != 'data':
-            print('__getattribute__ called for ' + attr)
+            # print('__getattribute__ called for ' + attr)
+            pass
         return super().__getattribute__(attr)
 
     def __getattr__(self, attr): # chiamato solo se non trovo __getattribute__
-        print('__getattr__ called for ' + attr)
+        # print('__getattr__ called for ' + attr)
         if attr == 'data':
             return super().__getattr__(attr)
         elif len(self)>0 and hasattr(self[0], attr):

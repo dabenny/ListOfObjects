@@ -26,16 +26,19 @@ print(test_list == [2,3,4])
 print(test_list[test_list > 2])
 
 class Box:
-    name = 'Baox'
+    def __init__(self, volume:int):
+        self.volume = volume
+        self.name = 'Baox_' + str(volume)
     def test(self):
-        print('I''m a Box')
+        print(f"I'm {self.name}")
 
-test_list = ListOfObj([Box() for n in range(1,5)])
+test_list = ListOfObj([Box(n) for n in range(1,5)])
 print(test_list[1])
 
 print(test_list.name)
 print(test_list[2].name)
 
+print(test_list[test_list.volume > 2].name)
 
 test_list.surnemae = 'ciccio'
 print(test_list[2].surnemae)
